@@ -24,5 +24,6 @@ body {
 .grid {
     padding: 1em;
     border: 1px solid black;
+    background-color: rgba(197, 182, 182, 0.411);
 }
 

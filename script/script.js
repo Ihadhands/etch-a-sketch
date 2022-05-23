@@ -1,6 +1,7 @@
 'use strict';
 
 const container = document.getElementById('container');
+const gridColor = document.getElementsByClassName('grid');
 
 function makeGrid (rows, cols) {
     container.style.setProperty('--rows', rows);
@@ -12,3 +13,9 @@ function makeGrid (rows, cols) {
 };
 
 makeGrid(16, 16);
+
+for (let i = 0; i < gridColor.length; i++) {
+    gridColor[i].addEventListener('mouseover', function () {
+        gridColor[i].style.backgroundColor = 'black';
+    });
+}
