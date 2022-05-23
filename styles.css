@@ -1,0 +1,28 @@
+:root {
+    --rows: 1;
+    --cols: 1;
+}
+
+body {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+#container {
+    display: grid;
+    width: 700px;
+    height: 700px;
+    border: 2px solid black;
+    grid-template-columns: repeat(var(--cols), 1fr);
+    grid-template-rows: repeat(var(--rows), 1fr);
+}
+
+.grid {
+    padding: 1em;
+    border: 1px solid black;
+}
+
