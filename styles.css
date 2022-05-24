@@ -3,6 +3,10 @@
     --cols: 1;
 }
 
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 body {
     display: flex;
     flex-flow: column nowrap;
@@ -11,6 +15,16 @@ body {
     background-color: rgb(113, 115, 247);
 }
 
+h1 {
+    font-weight: 900;
+}
+.options {
+
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 20px;
+}
 
 
 #container {
@@ -28,3 +42,31 @@ body {
     background-color: rgba(255, 255, 255, 0.411);
 }
 
+.button {
+    padding: 20px;
+    width: 90px;
+    height: 90px;
+    border-radius: 25%;
+    transition: .2s ease-in-out 0s;
+    border: none;
+    background-color: white;
+    font-weight: 700;
+}
+
+.button:hover {
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.445),0 17px 50px 0 rgba(0, 0, 0, 0.329);
+    transform: scale(1.15);  
+}
+.button.change-eraser:hover {
+    background-color: grey;
+    color: white;
+}
+
+.button.change-black:hover {
+    background-color: black;
+    color: white;
+}
+
+.button.change-random:hover {
+    color: white;
+}

@@ -2,6 +2,7 @@
 
 const container = document.getElementById('container');
 const gridColor = document.getElementsByClassName('grid');
+const randomColorbutton = document.getElementsByClassName('button change-random');
 const buttonRandom = document.getElementById('random-rgba');
 const buttonBlack = document.getElementById('black');
 const erase = document.getElementById('eraser');
@@ -52,3 +53,18 @@ clear.addEventListener('click', function () {
         gridColors.style.backgroundColor = 'rgba(255, 255, 255, 0.411)';
     }
 })
+
+
+    for (let i = 0; i < randomColorbutton.length; i++) {
+            randomColorbutton[i].addEventListener('mouseover', function() {
+                let o = Math.round;
+                let r = Math.random;
+                let s = 255;
+                let color = 'rgba(' + o(r()*s) + ',' + o(r()*s) + ',' + o(r()*s) + ',' + r().toFixed(1) + ')';
+                randomColorbutton[i].style.backgroundColor = color;
+            });
+            randomColorbutton[i].addEventListener('mouseout', function () {
+                randomColorbutton[i].style.backgroundColor = 'white';
+            })
+    }
+ 
