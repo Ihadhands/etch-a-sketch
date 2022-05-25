@@ -30,13 +30,14 @@ function gridSize (rows, cols) {
 function changeSize() {
     let num = prompt('Choose a number between 0 - 100');
     console.log(num);
+    clearGrid();
     gridSize(num, num);
     makeGrid(num);
-    clearGrid();
+    
 
 }
 
-function clearGrid {
+function clearGrid() {
     while (container.firstChild) {
         container.removeChild(container.firstChild);
     };
