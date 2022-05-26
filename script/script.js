@@ -29,11 +29,17 @@ function gridSize (rows, cols) {
 
 function changeSize() {
     let num = prompt('Choose a number between 0 - 100');
-    console.log(num);
-    clearGrid();
-    gridSize(num, num);
-    makeGrid(num);
-    
+    if ((num < 0) || (num > 100)) {
+        alert('Cannot be below 0 or above 100 try again!')
+        num = prompt('Choose a number between 0 - 100');
+        clearGrid();
+        gridSize(num, num);
+        makeGrid(num);
+    } else { 
+        clearGrid();
+        gridSize(num, num);
+        makeGrid(num);
+    }
 
 }
 
@@ -60,7 +66,7 @@ buttonRandom.addEventListener('click', function () {
             let o = Math.round;
             let r = Math.random;
             let s = 255;
-            let color = 'rgba(' + o(r()*s) + ',' + o(r()*s) + ',' + o(r()*s) + ',' + r().toFixed(1) + ')';
+            let color = 'rgba(' + o(r()*s) + ',' + o(r()*s) + ',' + o(r()*s).toFixed(1) + ')';
             gridColor[i].style.backgroundColor = color;
         });
     };
@@ -69,14 +75,14 @@ buttonRandom.addEventListener('click', function () {
 erase.addEventListener('click', function () {
     for (let i = 0; i < gridColor.length; i++) {
         gridColor[i].addEventListener('mouseover', function () {
-            gridColor[i].style.backgroundColor = 'rgba(255, 255, 255, 0.411)';
+            gridColor[i].style.backgroundColor = 'white';
         });
     };
 })
 
 clear.addEventListener('click', function () {
     for (let gridColors of gridColor) {
-        gridColors.style.backgroundColor = 'rgba(255, 255, 255, 0.411)';
+        gridColors.style.backgroundColor = 'white';
     }
 })
 
